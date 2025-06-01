@@ -11,6 +11,11 @@ echo "Starting 99-custom.sh at $(date)" >> $LOGFILE
 # uci set "dhcp.@domain[-1].name=time.android.com"
 # uci set "dhcp.@domain[-1].ip=203.107.6.88"
 
+root_password="abcd1234"
+if [ -n "$root_password" ]; then
+    (echo "$root_password"; sleep 1; echo "$root_password") | passwd > /dev/null
+fi
+
 # 检查配置文件pppoe-settings是否存在 该文件由build.sh动态生成
 SETTINGS_FILE="/etc/config/pppoe-settings"
 if [ ! -f "$SETTINGS_FILE" ]; then
