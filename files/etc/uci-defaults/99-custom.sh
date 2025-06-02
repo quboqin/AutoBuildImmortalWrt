@@ -74,7 +74,7 @@ elif [ "$count" -gt 1 ]; then
    fi
    # LAN口设置静态IP
    uci set dhcp.lan.ignore='1'
-   uci set network.lan.ipaddr="192.168.123.99"
+   uci set network.lan.ipaddr="192.168.123.77"
    uci set network.lan.gateway='192.168.123.8'
    uci set network.lan.dns='192.168.123.8'
    uci set network.lan.proto='static'
